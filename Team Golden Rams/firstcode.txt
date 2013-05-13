@@ -1,0 +1,33 @@
+**into a script called script_move**
+
+ argument0 = 4
+ argument1 = 270
+ argument2 = 0.6
+ argument3 = 15
+
+ if (vspeed>argument3)
+   vspeed=argument3;
+ if (place_free(x,y+1))
+ {
+ gravity_direction=argument1;
+ gravity=argument2;
+ }
+ else
+ {
+ gravity_direction=argument1;
+ gravity=0;
+ }
+ if (keyboard_check(vk_space) && not place_free(x,y+1)) motion_set(270,-10)
+ if (keyboard_check(vk_left) && place_free(x-argument0,y)) x-=argument0
+ if (keyboard_check(vk_right) && place_free(x+argument0,y)) x+=argument0
+
+
+**into player object, Add event > run scrupt*
+**select script_move**
+values set to
+4
+270
+0.615
+
+******************
+on rooms set enable views, object following - player, Hbor/Vbor=500, portonscreeen/viewinroom to w=1024, H=720
